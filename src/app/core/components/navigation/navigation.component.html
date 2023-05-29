@@ -1,66 +1,36 @@
-<div class="header-container">
-  <div *ngIf="!authService.isLoggedIn()" class="in">
-    <img
-      class="header-icon"
-      src="../../../../assets/icons/sign.svg"
-      alt="sign"
-    />
-    <a [routerLink]="['/login']" class="icon-linkedin-circled">SIGN IN</a>
+<nav>
+  <div class="header-container">
+    <div *ngIf="!authService.isLoggedIn()" class="in">
+      <img
+        class="header-icon"
+        src="../../../../assets/icons/sign.svg"
+        alt="sign"
+      />
+      <a [routerLink]="['/login']" class="icon-linkedin-circled">SIGN IN</a>
+    </div>
+    <div
+      *ngIf="authService.isLoggedIn()"
+      (click)="authService.logout()"
+      class="out"
+    >
+      <a class="log-out"> LOG OUT </a>
+    </div>
+    <div class="marvel-word">
+      <a class="logo-marvel" routerLink="">
+        <img
+          class="marvel-logo"
+          src="../../../../assets/icons/marvel.svg "
+          alt="#"
+        />
+      </a>
+    </div>
   </div>
-  <div
-    *ngIf="authService.isLoggedIn()"
-    (click)="authService.logout()"
-    class="out"
-  >
-    <a class="log-out"> LOG OUT </a>
-  </div>
-  <div class="m">
-    <img src="../../../../assets/icons/marvel.svg " alt="#" />
-  </div>
-  <div class="srh"><a href="#" class="icon-search"></a></div>
-</div>
-<div *ngIf="authService.isLoggedIn()" class="menu">
-  <nav>
+  <div *ngIf="authService.isLoggedIn()" class="menu">
     <ul class="block">
-      <li class="vd"><a>Videos</a></li>
-      <li
-        class="ch"
-        (mouseenter)="showFloatingComponent = true"
-        (mouseleave)="showFloatingComponent = false"
-      >
-        <div id="carte"></div>
-        <a routerLink="/characters">Characters</a>
+      <li class="ch">
+        <a routerLink="/characters">CHARACTERS</a>
       </li>
-      <li class="cs"><a routerLink="/comics">Comics</a></li>
+      <li class="cs"><a routerLink="/comics">COMICS</a></li>
     </ul>
-  </nav>
-  <div class="carte"></div>
-  <!-- </div> -->
-</div>
-
-<!-- <div> -->
-<!-- <app-floating-menu *ngIf="showFloatingComponent">
-
-    <ng-container header>
-
-       <button title="test1"> Buton 1 </button>
-       <button title="test2"> Buton 2 </button>
-       <button title="test2"> Buton 3 </button>
-
-    </ng-container>
-
-    <ng-container>
-
-        <li>Item1</li>
-        <li>Item2</li>
-        <li>Item2</li>
-
-    </ng-container>
-
-    <ng-container footer>
-      <li>Item1</li>
-      <li>Item2</li>
-      <li>Item2</li>
-    </ng-container>
-  </app-floating-menu> -->
-<!-- </div> -->
+  </div>
+</nav>
