@@ -1,6 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { MenuItem } from "primeng/api";
 import { SuportedLangs } from "../../enums/suported-langs.enum";
 import { NavigationService } from "../../services/navigation-service/navigation.service";
 import { AuthService } from "../../services/auth-service/auth.service";
@@ -10,11 +9,10 @@ import { AuthService } from "../../services/auth-service/auth.service";
   templateUrl: "./navigation.component.html",
   styleUrls: ["./navigation.component.scss"],
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
   SuportedLangs = SuportedLangs;
   suportedLangsArray!: string[];
   CurrentLang!: string;
-  items: MenuItem[] = [];
 
   showFloatingComponent = false;
 
@@ -28,66 +26,6 @@ export class NavigationComponent implements OnInit {
     this.loadLangLocal();
   }
 
-  ngOnInit(): void {
-    this.items = [
-      {
-        label: "First Page",
-        escape: false,
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-      {
-        label: "NEWS",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-      {
-        label: "COMICS",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./comics",
-      },
-      // {
-      //   label: "CHARACTERS",
-      //   icon: "pi pi-fw pi-prime",
-      //   routerLink: "./characters",
-      // },
-      {
-        label: `<span
-        (mouseenter)="showFloatingComponent = true"
-        (mouseleave)="showFloatingComponent = false"
-        >Refresh</span
-      >`,
-        escape: false,
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./characters",
-      },
-      {
-        label: "MOVIES",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-      {
-        label: "TV SHOWS",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-      {
-        label: "GAMES",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-      {
-        label: "VIDEOS",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-      {
-        label: "MORE",
-        icon: "pi pi-fw pi-prime",
-        routerLink: "./page1/1",
-      },
-    ];
-  }
 
   private loadLangLocal(): void {
     if (localStorage.getItem("lang")) {

@@ -1,27 +1,25 @@
 <div class="header-container">
-  <div class="in">
-    <a [routerLink]="['/login']" class="icon-linkedin-circled">Sign in</a>
+  <div *ngIf="!authService.isLoggedIn()" class="in">
+    <img
+      class="header-icon"
+      src="../../../../assets/icons/sign.svg"
+      alt="sign"
+    />
+    <a [routerLink]="['/login']" class="icon-linkedin-circled">SIGN IN</a>
   </div>
-  <div class="in">
-    <a
-      *ngIf="authService.isLoggedIn()"
-      (click)="authService.logout()"
-      class="icon-linkedin-circled"
-    >
-      Log out
-    </a>
+  <div
+    *ngIf="authService.isLoggedIn()"
+    (click)="authService.logout()"
+    class="out"
+  >
+    <a class="log-out"> LOG OUT </a>
   </div>
   <div class="m">
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR8WZimwvIDPs-YvcUS7Nd67rAQl_JkRcH6d1BEJVz5LA49Q6cm"
-      alt="#"
-      width="40px"
-    />
+    <img src="../../../../assets/icons/marvel.svg " alt="#" />
   </div>
   <div class="srh"><a href="#" class="icon-search"></a></div>
 </div>
-<div class="menu">
-  <!-- <div class="submenu"> -->
+<div *ngIf="authService.isLoggedIn()" class="menu">
   <nav>
     <ul class="block">
       <li class="vd"><a>Videos</a></li>
@@ -34,11 +32,6 @@
         <a routerLink="/characters">Characters</a>
       </li>
       <li class="cs"><a routerLink="/comics">Comics</a></li>
-      <li class="mv"><a href="#">Movies</a></li>
-      <li class="tv"><a href="#">TV-show</a></li>
-      <li class="gs"><a href="#">Games</a></li>
-      <li class="ns"><a href="#">News</a></li>
-      <li class="mr"><a href="#">More</a></li>
     </ul>
   </nav>
   <div class="carte"></div>
