@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "1e50c2fb-99e3-4f49-8156-7f844418e72c",
+		"name": "Marvel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26965811",
+		"_collection_link": "https://blue-sunset-363131.postman.co/workspace/New-Team-Workspace~3f13bdf9-8d7c-41b4-9525-80ca573c8034/collection/18572699-1e50c2fb-99e3-4f49-8156-7f844418e72c?action=share&creator=26965811&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "GabyCalls",
+			"item": [
+				{
+					"name": "GetAllComicsGabyApiAuth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway.marvel.com/v1/public/comics?ts=2&apikey=f1296a5ad495a23c74117a087c56ff5c&hash=f2422fa8b06db75d2de7b3b9b6d2a622",
+							"protocol": "https",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"comics"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "2"
+								},
+								{
+									"key": "apikey",
+									"value": "f1296a5ad495a23c74117a087c56ff5c"
+								},
+								{
+									"key": "hash",
+									"value": "f2422fa8b06db75d2de7b3b9b6d2a622"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCharNameStartsWith",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway.marvel.com/v1/public/characters?ts=2&apikey=f1296a5ad495a23c74117a087c56ff5c&hash=f2422fa8b06db75d2de7b3b9b6d2a622&nameStartsWith=Agent",
+							"protocol": "https",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "2"
+								},
+								{
+									"key": "apikey",
+									"value": "f1296a5ad495a23c74117a087c56ff5c"
+								},
+								{
+									"key": "hash",
+									"value": "f2422fa8b06db75d2de7b3b9b6d2a622"
+								},
+								{
+									"key": "nameStartsWith",
+									"value": "Agent"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agus",
+			"item": [
+				{
+					"name": "Get all characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=3208de67f0498a84f1041a2f2c450415&hash=5796dc3eccad1df231368f1e84f8a12f",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "3208de67f0498a84f1041a2f2c450415"
+								},
+								{
+									"key": "hash",
+									"value": "5796dc3eccad1df231368f1e84f8a12f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get character by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway.marvel.com:443/v1/public/characters/1017100?ts=1&apikey=3208de67f0498a84f1041a2f2c450415&hash=5796dc3eccad1df231368f1e84f8a12f",
+							"protocol": "https",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1017100"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "3208de67f0498a84f1041a2f2c450415"
+								},
+								{
+									"key": "hash",
+									"value": "5796dc3eccad1df231368f1e84f8a12f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all comics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=3208de67f0498a84f1041a2f2c450415&hash=5796dc3eccad1df231368f1e84f8a12f",
+							"protocol": "https",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"v1",
+								"public",
+								"comics"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "3208de67f0498a84f1041a2f2c450415"
+								},
+								{
+									"key": "hash",
+									"value": "5796dc3eccad1df231368f1e84f8a12f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comic by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway.marvel.com:443/v1/public/comics/82967?ts=1&apikey=3208de67f0498a84f1041a2f2c450415&hash=5796dc3eccad1df231368f1e84f8a12f",
+							"protocol": "https",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"v1",
+								"public",
+								"comics",
+								"82967"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "3208de67f0498a84f1041a2f2c450415"
+								},
+								{
+									"key": "hash",
+									"value": "5796dc3eccad1df231368f1e84f8a12f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comics 19/04/2023",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway.marvel.com:443/v1/public/comics?dateRange=2023-04-19%2C2023-04-19&ts=1&apikey=3208de67f0498a84f1041a2f2c450415&hash=5796dc3eccad1df231368f1e84f8a12f",
+							"protocol": "https",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"v1",
+								"public",
+								"comics"
+							],
+							"query": [
+								{
+									"key": "dateRange",
+									"value": "2023-04-19%2C2023-04-19"
+								},
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "3208de67f0498a84f1041a2f2c450415"
+								},
+								{
+									"key": "hash",
+									"value": "5796dc3eccad1df231368f1e84f8a12f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

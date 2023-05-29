@@ -1,0 +1,17 @@
+<div class="card shadow-lg" style="border-radius: 1rem">
+  <div
+    class="card-header"
+    style="border-top-left-radius: 1rem; border-top-right-radius: 1rem"
+  >
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+  <div
+    class="card-footer"
+    style="border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem"
+  >
+    <ng-content select="[footer]"></ng-content>
+  </div>
+</div>

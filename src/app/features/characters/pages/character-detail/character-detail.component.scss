@@ -1,0 +1,23 @@
+.char-detail-card {
+  display: flex;
+  // flex-direction: column;
+
+}
+
+.form-style {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 20px;
+}
+
+.form-input,
+.form-text-area {
+  border: none;
+}
+
+.form-text-area {
+  width: 50vw;
+  height: 50vh;
+  overflow: hidden;
+  resize: none;
+}

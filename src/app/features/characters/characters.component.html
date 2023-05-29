@@ -1,0 +1,42 @@
+<div class="featured-characters">
+  <h2>Featured Characters</h2>
+</div>
+<div class="character-spotlight">
+  <h2>Character Spotlight</h2>
+</div>
+
+<ng-container *ngIf="suggestions$ | async as charList">
+  <div class="character-table">
+    <div class="character-table-menu">
+      <div class="card flex justify-content-center">
+        <p-autoComplete
+          [suggestions]="charList"
+          (completeMethod)="search($event)"
+          [minLength]="3"
+          [delay]="1000"
+          field="name"
+          (onSelect)="selectedValue($event)"
+          [lazy]="true"
+        ></p-autoComplete>
+        <p-selectButton
+          [options]="options"
+          (onChange)="orderChange($event)"
+        ></p-selectButton>
+      </div>
+    </div>
+    <div class="character-container">
+      <ng-container *ngFor="let character of charList">
+        <app-card-detail
+          [routerLink]="['./detail', character.id]"
+          [character]="character"
+        ></app-card-detail
+      ></ng-container>
+    </div>
+  </div>
+</ng-container>
+<p-paginator
+  (onPageChange)="onPageChange($event)"
+  [first]="0"
+  [rows]="limit"
+  [totalRecords]="currentQueryResult.total"
+></p-paginator>

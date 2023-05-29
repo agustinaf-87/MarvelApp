@@ -1,0 +1,108 @@
+$white: #fff;
+$light: #ccc;
+$primary: #e62429;
+
+.character-card {
+  width: 180px;
+  white-space: normal;
+  position: relative;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 94%, 87% 100%, 0% 100%);
+  z-index: 10;
+  margin-left: 10px;
+
+  .card-link {
+    text-decoration: none;
+    color: $white;
+  }
+
+  .card-head {
+    background: $primary;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    height: 200px;
+
+    .image-wrapper {
+      margin: 0;
+      height: 100%;
+      position: relative;
+
+      &::after {
+        height: 4px;
+        content: "";
+        background-color: $primary;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      img {
+        transform: scale(1);
+        transition: all 0.2s linear;
+        overflow: hidden;
+        object-position: top center;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .card-content {
+    height: 145px;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    line-height: 1;
+    z-index: 100;
+
+    &.slider {
+      background: #000;
+
+      &::before {
+        background: $primary;
+        bottom: 100%;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        transition: all 0.3s;
+        width: 100%;
+        z-index: -1;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+    }
+
+    &-headline {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    &-footer {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: inherit;
+
+      position: absolute;
+      bottom: 15px;
+    }
+  }
+
+  .card-link:hover {
+    & .slider::before {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    & .image-wrapper img {
+      transform: scale3d(1.05, 1.05, 1);
+    }
+  }
+}

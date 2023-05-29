@@ -1,0 +1,13 @@
+<div *ngIf="character" class="character-card">
+  <a class="card-link">
+    <div class="card-head">
+      <figure class="image-wrapper">
+        <img title="Character Card" [src]="parseUrl(character.thumbnail)" />
+      </figure>
+    </div>
+    <div class="card-content slider">
+      <p class="card-content-headline">{{ cleanName[0] }}</p>
+      <p *ngIf="cleanName[1]" class="card-content-footer">{{ cleanName[1] }}</p>
+    </div>
+  </a>
+</div>

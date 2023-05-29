@@ -1,0 +1,43 @@
+<div class="comic-detail">
+  <h3 class="comic-detail-title">{{ comic.title }}</h3>
+  <div class="comic-form">
+    <img
+      class="comic-img-detail"
+      src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
+      alt="comic-img"
+    />
+    <form [formGroup]="detailCardForm" class="form-detail-comic">
+      <mat-label for="staticPublishDate" class="label-comic"
+        >Published</mat-label
+      >
+      <input
+        class="input-comic"
+        formControlName="staticPublishDate"
+        matInput
+        placeholder="Published"
+        type="text"
+        readonly="{{ readNot }}"
+      />
+      <mat-label for="staticWriterName" class="label-comic">Writer:</mat-label>
+      <input
+        class="input-comic"
+        formControlName="staticWriterName"
+        matInput
+        placeholder="Writer"
+        type="text"
+        readonly="{{ readNot }}"
+      />
+      <mat-label for="staticDescription" class="label-comic"
+        >Description:</mat-label
+      >
+      <textarea
+        matInput
+        placeholder="Description"
+        formControlName="staticDescription"
+        class="input-comic-text"
+        type="text"
+        readonly="{{ readNot }}"
+      ></textarea>
+    </form>
+  </div>
+</div>
