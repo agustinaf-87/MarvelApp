@@ -1,36 +1,36 @@
-<div class="featured-characters">
-  <h2>Featured Characters</h2>
-</div>
-<div class="character-spotlight">
-  <h2>Character Spotlight</h2>
-</div>
-
 <ng-container *ngIf="suggestions$ | async as charList">
-  <div class="character-table">
-    <div class="character-table-menu">
-      <div class="card flex justify-content-center">
-        <p-autoComplete
-          [suggestions]="charList"
-          (completeMethod)="search($event)"
-          [minLength]="3"
-          [delay]="1000"
-          field="name"
-          (onSelect)="selectedValue($event)"
-          [lazy]="true"
-        ></p-autoComplete>
-        <p-selectButton
-          [options]="options"
-          (onChange)="orderChange($event)"
-        ></p-selectButton>
-      </div>
+  <h4 class="marvel-characters">MARVEL CHARACTERS LIST</h4>
+  <div class="character-table-menu">
+    <div class="search-box">
+      <span>
+        <img class="search-icon" src="../../../assets/icons/search.svg"
+      /></span>
+      <p-autoComplete
+        [suggestions]="charList"
+        (completeMethod)="search($event)"
+        [minLength]="3"
+        [delay]="1000"
+        field="name"
+        (onSelect)="selectedValue($event)"
+        [lazy]="true"
+        placeholder="SEARCH"
+      ></p-autoComplete>
     </div>
-    <div class="character-container">
-      <ng-container *ngFor="let character of charList">
-        <app-card-detail
-          [routerLink]="['./detail', character.id]"
-          [character]="character"
-        ></app-card-detail
-      ></ng-container>
+    <div class="sort-box">
+      <h5>SORT BY</h5>
+      <p-selectButton
+        [options]="options"
+        (onChange)="orderChange($event)"
+      ></p-selectButton>
+    </div>
+  </div>
+  <div class="character-container">
+    <div *ngFor="let character of charList">
+      <app-card-detail
+        class="char-card"
+        [routerLink]="['./detail', character.id]"
+        [character]="character"
+      ></app-card-detail>
     </div>
   </div>
 </ng-container>
