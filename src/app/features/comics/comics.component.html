@@ -1,7 +1,6 @@
 <app-carousel></app-carousel>
-
 <div>
-  <h1>APRIL 25: NEW RELEASES</h1>
+  <h2 class="new-releases-title">MAY 31: NEW RELEASES</h2>
   <div
     class="marvel-comic-cards row row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-2"
   >
@@ -14,16 +13,33 @@
       type="button"
       id="load-more-button"
       *ngIf="showLoadMoreButton"
-      (click)="loadNext7DigitalComics()"
+      (click)="loadNext7Comics()"
     >
       Load more
     </button>
   </div>
 </div>
 
-<div>
-  <h1>BEST DIGITAL SELLING COMICS</h1>
-  <div *ngFor="let comic of digitalComics" class="col">
-    <app-comic-card [digitalComics]="comic"></app-comic-card>
-  </div>
+<div class="card">
+  <h2 class="digital-title">BEST DIGITAL SELLING COMICS</h2>
+  <p-carousel
+    [value]="digitalComics"
+    [numVisible]="5"
+    [numScroll]="5"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-comic pTemplate="item">
+      <div
+        class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+      >
+        <div class="mb-3">
+          <app-comic-card
+            [digitalComics]="comic"
+            class="w-6 shadow-2"
+          ></app-comic-card>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
 </div>

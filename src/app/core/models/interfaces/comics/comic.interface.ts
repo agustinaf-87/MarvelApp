@@ -1,4 +1,3 @@
-import { IComicsAbridged } from "../characters/comic-agridged/comic-item-abridged";
 import { IThumbnail } from "../common/thumbnail.interface";
 import { ICharactersAbridged } from "./characters-abridged/characters-abridged.interface";
 import { IDateElement } from "./others/date-element.interface";
@@ -14,6 +13,6 @@ export interface IComic {
   prices: IPrice[];
   thumbnail: IThumbnail;
   images: IThumbnail[];
-  creators: IComicsAbridged;
+  creators: ICharactersAbridged;
   characters: ICharactersAbridged;
 }
