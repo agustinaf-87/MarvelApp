@@ -14,6 +14,7 @@ import { PaginatorModule } from "primeng/paginator";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { CarouselModule } from "primeng/carousel";
 import { FormLayoutComponent } from "./components/form-layout/form-layout/form-layout.component";
 const PRIMENG_MODULES = [
   BreadcrumbModule,
@@ -24,6 +25,7 @@ const PRIMENG_MODULES = [
   AutoCompleteModule,
   PaginatorModule,
   SelectButtonModule,
+  CarouselModule,
 ];
 
 const MATERIAL_MODULES = [MatFormFieldModule, MatInputModule];

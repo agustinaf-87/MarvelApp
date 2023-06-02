@@ -11,7 +11,6 @@
             />
           </a>
           <h5 class="card-title">{{ comics.title }}</h5>
-          <br />
           <p class="author">
             {{ comics.creators.items[0].name }}
           </p>
@@ -32,24 +31,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="container">
-  <div class="row d-flex justify-content-center">
-    <div class="col">
-      <div class="card">
-        <a routerLink="/comics/comic-detail/{{ comics.id }}">
-          <img
-            class="card-img-top img-fluid d-block mx-auto"
-            src="{{ comics.thumbnail.path }}.{{ comics.thumbnail.extension }}"
-            alt="Comic Image Not found"
-          />
-        </a>
-        <h5 class="card-title">{{ comics.title }}</h5>
-        <br />
-        <p class="author">
-          {{ comics.creators.items[0].name }}
-        </p>
-      </div>
-    </div>
-  </div>
-</div> -->
