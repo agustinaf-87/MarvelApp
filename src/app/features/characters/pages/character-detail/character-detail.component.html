@@ -1,14 +1,13 @@
 <div *ngIf="characterData" class="char-detail-card">
-  <!-- <img title="Character" [src]="parseUrl(characterData.thumbnail)" /> -->
   <img
+    class="character-img"
     title="Character"
-    style="width: 30vw"
     src="{{ characterData.thumbnail.path }}.{{
       characterData.thumbnail.extension
     }}"
   />
   <form [formGroup]="charForm" class="form-style">
-    <mat-form-field>
+    <mat-form-field class="character-name">
       <mat-label for="name">Character Name</mat-label>
       <input
         matInput
@@ -18,15 +17,20 @@
         formControlName="name"
       />
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field
+      class="character-description"
+      *ngIf="characterData.description"
+    >
       <mat-label class="form-label" for="description">Description</mat-label>
       <textarea
+        class="text-description"
         title="Descriptions"
         matInput
         cdkTextareaAutosize
         readonly="{{ disabled }}"
         #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
+        cdkAutosizeMinRows="5"
+        cdkAutosizeMaxRows="12"
         formControlName="description"
       ></textarea>
     </mat-form-field>
