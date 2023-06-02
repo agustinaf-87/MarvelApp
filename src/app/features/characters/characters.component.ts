@@ -49,8 +49,6 @@ export class CharactersComponent implements OnInit {
   }
 
   async search(event: any) {
-    //data: event.query
-
     if (
       !this.currentFilter ||
       this.currentFilter.nameStartsWith !== event.query
@@ -71,11 +69,6 @@ export class CharactersComponent implements OnInit {
   }
 
   onPageChange(event: any) {
-    //  event.first: Index of first record
-    //  event.rows: Number of rows to display in new page
-    //  event.page: Index of the new page
-    //  event.pageCount: Total number of pages
-
     this.currentFilter.offset = event.page * this.limit;
     this.updateData();
   }
@@ -95,9 +88,6 @@ export class CharactersComponent implements OnInit {
   }
 
   orderChange(event: any) {
-    // event.originalEvent: browser event
-    // event.value: single value or an array of values that are selected
-
     switch (event.value) {
       case "ascending":
         this.currentFilter.orderBy = "name";
