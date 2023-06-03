@@ -8,14 +8,12 @@ import { HttpLoaderFactory } from "../app.module";
 import { HttpClient } from "@angular/common/http";
 import { MenubarModule } from "primeng/menubar";
 import { ButtonModule } from "primeng/button";
-import { FloatingMenuComponent } from "./components/floating-menu-layout/floating-menu/floating-menu.component";
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { PaginatorModule } from "primeng/paginator";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { CarouselModule } from "primeng/carousel";
-import { FormLayoutComponent } from "./components/form-layout/form-layout/form-layout.component";
 const PRIMENG_MODULES = [
   BreadcrumbModule,
   DropdownModule,
@@ -31,7 +29,7 @@ const PRIMENG_MODULES = [
 const MATERIAL_MODULES = [MatFormFieldModule, MatInputModule];
 
 @NgModule({
-  declarations: [FloatingMenuComponent, FormLayoutComponent],
+  declarations: [],
   imports: [
     CommonModule,
     PRIMENG_MODULES,
@@ -43,11 +41,6 @@ const MATERIAL_MODULES = [MatFormFieldModule, MatInputModule];
       },
     }),
   ],
-  exports: [
-    PRIMENG_MODULES,
-    MATERIAL_MODULES,
-    TranslateModule,
-    FloatingMenuComponent,
-  ],
+  exports: [PRIMENG_MODULES, MATERIAL_MODULES, TranslateModule],
 })
 export class SharedModule {}

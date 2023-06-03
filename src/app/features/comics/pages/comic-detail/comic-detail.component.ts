@@ -1,23 +1,26 @@
 import { Component, OnInit } from "@angular/core";
-import { IComic } from "src/app/core/models/interfaces/comics/comic.interface";
-import { ComicDetailService } from "./services/comic-detail.service";
+import { ComicServiceService } from "../../services/comic-service.service";
 import { ActivatedRoute } from "@angular/router";
+import { IComic } from "src/app/core/models/interfaces/comics/comic.interface";
 import { FormControl, FormGroup } from "@angular/forms";
+import { DatePipe } from "@angular/common"; // Importar DatePipe
 
 @Component({
-  selector: "app-comic-detail",
   templateUrl: "./comic-detail.component.html",
   styleUrls: ["./comic-detail.component.scss"],
+  providers: [DatePipe], // Agregar DatePipe como proveedor
 })
 export class ComicDetailComponent implements OnInit {
-  constructor(
-    private comicDetailService: ComicDetailService,
-    private route: ActivatedRoute
-  ) {}
   comic!: IComic;
 
-  public detailCardForm!: FormGroup;
+  detailCardForm!: FormGroup;
   readNot = true;
+
+  constructor(
+    private comicService: ComicServiceService,
+    private route: ActivatedRoute,
+    private datePipe: DatePipe
+  ) {}
 
   ngOnInit(): void {
     this.getFilterComicById();
@@ -29,10 +32,12 @@ export class ComicDetailComponent implements OnInit {
   }
   getFilterComicById() {
     const id = Number(this.route.snapshot.paramMap.get("id"));
-    this.comicDetailService.getComicById(id).subscribe((data) => {
+    this.comicService.getComicById(id).subscribe((data) => {
       this.detailCardForm
         .get("staticPublishDate")
-        ?.setValue(data.results[0].dates[0].date);
+        ?.setValue(
+          this.datePipe.transform(data.results[0].dates[0].date, "dd/MM/yyyy")
+        );
       this.detailCardForm
         .get("staticWriterName")
         ?.setValue(data.results[0].creators.items[0].name);

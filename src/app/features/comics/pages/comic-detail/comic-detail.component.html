@@ -1,0 +1,60 @@
+<div class="comic-detail">
+  <h3 class="comic-detail-title">{{ comic.title }}</h3>
+  <div class="comic-form">
+    <img
+      class="comic-img-detail"
+      src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
+      alt="comic-img"
+    />
+    <form [formGroup]="detailCardForm" class="form-detail-comic">
+      <mat-form-field class="publish-date">
+        <mat-label for="staticPublishDate" class="label-comic"
+          >Published</mat-label
+        >
+        <input
+          class="input-comic"
+          formControlName="staticPublishDate"
+          matInput
+          placeholder="Published"
+          type="text"
+          [value]="
+            detailCardForm.get('staticPublishDate')?.value | date : 'dd/MM/yyyy'
+          "
+          readonly="{{ readNot }}"
+        />
+      </mat-form-field>
+      <mat-form-field class="writer-name">
+        <mat-label for="staticWriterName" class="label-comic"
+          >Writer:</mat-label
+        >
+        <input
+          class="input-comic"
+          formControlName="staticWriterName"
+          matInput
+          placeholder="Writer"
+          type="text"
+          readonly="{{ readNot }}"
+      /></mat-form-field>
+      <mat-form-field
+        class="comic-description"
+        *ngIf="detailCardForm.get('staticDescription')?.value"
+      >
+        <mat-label for="staticDescription" class="label-comic"
+          >Description:</mat-label
+        >
+        <textarea
+          class="text-description"
+          title="Description"
+          matInput
+          cdkTextareaAutosize
+          readonly="{{ readNot }}"
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMaxRows="5"
+          formControlName="staticDescription"
+          class="input-comic-text"
+          type="text"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

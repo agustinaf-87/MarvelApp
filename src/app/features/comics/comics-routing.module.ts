@@ -1,15 +1,19 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ComicsComponent } from "./comics.component";
+import { ComicDetailComponent } from "./pages/comic-detail/comic-detail.component";
+import { authGuard } from "src/app/core/guards/auth-guard.guard";
 
 const routes: Routes = [
-  { path: "", component: ComicsComponent },
+  {
+    path: "",
+    canActivate: [authGuard],
+    component: ComicsComponent,
+  },
   {
     path: "comic-detail/:id",
-    loadChildren: () =>
-      import("../comic-detail/comic-detail.module").then(
-        (m) => m.ComicDetailModule
-      ),
+    canActivate: [authGuard],
+    component: ComicDetailComponent,
   },
 ];
 
