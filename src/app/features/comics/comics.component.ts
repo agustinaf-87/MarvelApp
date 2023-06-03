@@ -55,7 +55,7 @@ export class ComicsComponent implements OnInit {
   }
 
   loadNext7Comics(): void {
-    const currentOffset = 12 + this.digitalComics.length; // Calcula el offset actual para la próxima página
+    const currentOffset = 12 + this.comics.length;
     this.comicService
       .getFilteredComics({
         dateDescriptor: ComicDateDescriptorEnum.LAST_WEEK,

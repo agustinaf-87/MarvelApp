@@ -23,56 +23,9 @@ export class ComicServiceService {
       .pipe(map((data: IDataWrapper<IComic>) => data.data));
   }
 
-  // getAllFilteredComics(filter?: IComicQueryParams) {
-  //   return this.filterOutBrokenComic(
-  //     this.http.get<IDataWrapper<IComic>>(`${environment.URL_API}/comics`, {
-  //       params: { ...(filter as any) },
-  //     })
-  //   ).pipe(map((pagination: IPagination<IComic>) => pagination.results));
-  // }
-
-  // getFilteredComicsByLastWeek(filter?: IComicQueryParams) {
-  //   return this.filterOutBrokenComic(
-  //     this.http.get<IDataWrapper<IComic>>(`${environment.URL_API}/comics`, {
-  //       params: { ...(filter as any), limit: "50", dateDescriptor: "lastWeek" },
-  //     })
-  //   ).pipe(map((pagination: IPagination<IComic>) => pagination.results));
-  // }
-
-  // private filterOutBrokenComic(
-  //   observable: Observable<IDataWrapper<IComic>>
-  // ): Observable<IPagination<IComic>> {
-  //   return observable.pipe(
-  //     map((data: IDataWrapper<IComic>) => {
-  //       const validFilteredComics: IComic[] = [];
-
-  //       data.data.results.forEach((comic) => {
-  //         if (this.validComic(comic)) validFilteredComics.push(comic);
-  //       });
-  //       data.data.count = validFilteredComics.length;
-  //       data.data.results = validFilteredComics;
-
-  //       return data.data;
-  //     })
-  //   );
-  // }
-
-  // private validComic(comic: IComic) {
-  //   return !comic.thumbnail.path.includes("image_not_available");
-  // }
-
-  // get12ComicsByLastWeek(filter?: IComicQueryParams) {
-  //   return this.getFilteredComics(filter).pipe(
-  //     map((comics: IComic[]) => comics.slice(0, 12))
-  //   );
-  // }
-
-  // get7MoreComicsByLastWeek(
-  //   startIndex: number,
-  //   filter?: IComicQueryParams
-  // ): Observable<IComic[]> {
-  //   return this.getFilteredComicsByLastWeek(filter).pipe(
-  //     map((comics: IComic[]) => comics.slice(startIndex, startIndex + 7))
-  //   );
-  // }
+  getComicById(id: number): Observable<IPagination<IComic>> {
+    return this.http
+      .get<IDataWrapper<IComic>>(`${environment.URL_API}/comics/${id}`)
+      .pipe(map((data: IDataWrapper<IComic>) => data.data));
+  }
 }

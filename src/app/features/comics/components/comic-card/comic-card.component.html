@@ -3,7 +3,7 @@
     <div class="col">
       <div class="card">
         <div *ngIf="comics; else digitalComicsTemplate">
-          <a routerLink="/comics/comic-detail/{{ comics.id }}">
+          <a routerLink="comic-detail/{{ comics.id }}">
             <img
               class="card-img-top img-fluid d-block mx-auto"
               src="{{ comics.thumbnail.path }}.{{ comics.thumbnail.extension }}"
@@ -17,13 +17,14 @@
         </div>
         <ng-template #digitalComicsTemplate>
           <div class="card-container-digital">
-            <img
-              class="card-img-top img-fluid d-block mx-auto"
-              src="{{ digitalComics.thumbnail.path }}.{{
-                digitalComics.thumbnail.extension
-              }}"
-              alt="Comic Image Not found"
-            />
+            <a routerLink="comic-detail/{{ digitalComics.id }}">
+              <img
+                class="card-img-top img-fluid d-block mx-auto"
+                src="{{ digitalComics.thumbnail.path }}.{{
+                  digitalComics.thumbnail.extension
+                }}"
+                alt="Comic Image Not found"
+            /></a>
             <h5 class="card-title">{{ digitalComics.title }}</h5>
           </div>
         </ng-template>
