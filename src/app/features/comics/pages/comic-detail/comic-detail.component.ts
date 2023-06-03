@@ -3,12 +3,12 @@ import { ComicServiceService } from "../../services/comic-service.service";
 import { ActivatedRoute } from "@angular/router";
 import { IComic } from "src/app/core/models/interfaces/comics/comic.interface";
 import { FormControl, FormGroup } from "@angular/forms";
-import { DatePipe } from "@angular/common"; // Importar DatePipe
+import { DatePipe } from "@angular/common";
 
 @Component({
   templateUrl: "./comic-detail.component.html",
   styleUrls: ["./comic-detail.component.scss"],
-  providers: [DatePipe], // Agregar DatePipe como proveedor
+  providers: [DatePipe],
 })
 export class ComicDetailComponent implements OnInit {
   comic!: IComic;

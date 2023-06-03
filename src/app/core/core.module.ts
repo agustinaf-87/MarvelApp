@@ -1,10 +1,8 @@
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { CommonModule } from "@angular/common";
-
 import { CoreRoutingModule } from "./core-routing.module";
 import { CoreComponent } from "./core.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
-import { BreadcrumbComponent } from "./components/breadcrumb/breadcrumb.component";
 import { NavigationService } from "./services/navigation-service/navigation.service";
 import { SharedModule } from "../shared/shared.module";
 import { SpinnerComponent } from "./components/spinner/spinner.component";
@@ -17,7 +15,6 @@ import { LandingPageComponent } from "./pages/landing-page/landing-page.componen
   declarations: [
     CoreComponent,
     NavigationComponent,
-    BreadcrumbComponent,
     SpinnerComponent,
     LoginComponent,
     FooterComponent,
