@@ -10,7 +10,6 @@ import {
   HttpClientModule,
 } from "@angular/common/http";
 import { CoreModule } from "./core/core.module";
-import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { NavigationService } from "./core/services/navigation-service/navigation.service";
 import { LoadingInterceptor } from "./core/interceptor/loading-interceptor/loading.interceptor";
@@ -35,13 +34,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       progressBar: true,
     }),
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
   ],
   providers: [
     {

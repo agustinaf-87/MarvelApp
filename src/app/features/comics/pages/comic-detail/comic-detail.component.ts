@@ -4,6 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { IComic } from "src/app/core/models/interfaces/comics/comic.interface";
 import { FormControl, FormGroup } from "@angular/forms";
 import { DatePipe } from "@angular/common";
+import { NavigationService } from "src/app/core/services/navigation-service/navigation.service";
 
 @Component({
   templateUrl: "./comic-detail.component.html",
@@ -19,7 +20,8 @@ export class ComicDetailComponent implements OnInit {
   constructor(
     private comicService: ComicServiceService,
     private route: ActivatedRoute,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    public navigation: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -46,5 +48,9 @@ export class ComicDetailComponent implements OnInit {
         ?.setValue(data.results[0].description);
       this.comic = data.results[0];
     });
+  }
+
+  goBack() {
+    this.navigation.goBack();
   }
 }
