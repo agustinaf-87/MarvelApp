@@ -1,3 +1,5 @@
+@import "src/styles.scss";
+
 .login-content{
     display: flex;
     flex-direction: column;
@@ -22,6 +24,7 @@ border-radius: 5px;
     margin-bottom: 1rem;
     padding: 20px;
     color: #e12835;
+    font-family: var($generalFont);
 }
 .form-login{
     display: flex;
@@ -39,6 +42,7 @@ border-radius: 5px;
 
 .label-login{
   color:white;
+  font-family: var($generalFont);
 }
 
 .input-login{
@@ -47,6 +51,7 @@ border-radius: 5px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-family: var($generalFont);
 }
 
 .button-login{
@@ -57,7 +62,8 @@ border-radius: 5px;
     background-color: #e12835;
     color: white;
     cursor: pointer;
-    justify-self: center ;
+    justify-self: center;
+    font-family: var($generalFont);
 }
 
 .login-content-button{

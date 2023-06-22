@@ -1,11 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-@import "./styles/primeng.scss";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
 
-/*Bootstrap*/
+@import "./styles/primeng.scss";
 
 @import "./styles/bootrstap.scss";
 
 @import 'ngx-toastr/toastr';
+
+$generalFont: 'Roboto', sans-serif;
 
 html,
 body {

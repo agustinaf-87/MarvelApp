@@ -1,3 +1,5 @@
+@import "src/styles.scss";
+
 .marvel-footer-inside {
   display: flex;
   flex-direction: row;
@@ -20,6 +22,7 @@
 }
 
 .links-marvel-items{
+  font-family: var($generalFont);
   padding: 2em;
 }
 
@@ -77,6 +80,7 @@
 
 .marvel-item {
   margin-bottom: 5px;
+  font-family: var($generalFont);
 }
 
 .marvel-description {
@@ -84,6 +88,7 @@
   margin-bottom: 30px;
   display: inline;
   color: #767676;
+  font-family: var($generalFont);
 }
 
 .marvel-footer-legal {
@@ -125,6 +130,7 @@
 .follow-title{
   padding-top: 1em;
   padding-left: .5em;
+  font-family: var($generalFont);
 
 }
 .footer-social-icons{

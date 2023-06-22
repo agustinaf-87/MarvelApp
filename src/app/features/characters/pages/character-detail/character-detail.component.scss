@@ -1,3 +1,5 @@
+@import "src/styles.scss";
+
 .char-detail-card {
 display: flex;
 flex-direction: row;
@@ -14,6 +16,7 @@ flex-direction: row;
   flex-direction: column;
   margin-left: 2em;
   padding: 0.88em 0;
+  font-family: var($generalFont);
 }
 
 .form-input,
@@ -24,11 +27,13 @@ flex-direction: row;
 .character-name{
 display: flex;
 flex-direction: column;
+font-family: var($generalFont);
 }
 
 .character-description{
   display: flex;
   flex-direction: column;
+  font-family: var($generalFont);
   }
 
 
@@ -45,6 +50,7 @@ flex-direction: column;
     transition: all 0.3s ease;
     display: flex;
     clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+    font-family: var($generalFont);
   }
 
   .go-back:hover {
