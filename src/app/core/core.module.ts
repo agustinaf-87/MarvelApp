@@ -10,7 +10,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./components/footer/footer.component";
 import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundComponent } from "./pages/not-found/not-found.component";
 
 @NgModule({
   declarations: [
