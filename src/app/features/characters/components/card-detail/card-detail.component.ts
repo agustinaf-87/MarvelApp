@@ -22,7 +22,6 @@ export class CardDetailComponent implements OnInit {
   @Input() character!: ICharacter;
 
   ngOnInit(): void {
-    // if (this.validCharacter()) this.formatName();
     this.formatName();
   }
 
@@ -42,11 +41,4 @@ export class CardDetailComponent implements OnInit {
       else this.cleanName = [this.character.name.trim()];
     }
   }
-
-  // public validCharacter() {
-  //   return (
-  //     this.character &&
-  //     !this.character.thumbnail.path.includes("image_not_available")
-  //   );
-  // }
 }
