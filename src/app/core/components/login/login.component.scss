@@ -3,15 +3,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    height: 100vh;
+    background-image: url(../../../../assets/images/marvel-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.7;
+  }
+
+  .form-login{
+background-color: rgba(0, 0, 0, 0.9);
+border-radius: 5px;
+  }
 
 .login-title{
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     padding: 20px;
+    color: #e12835;
 }
-.login-form{
+.form-login{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,6 +34,11 @@
     border: 1px solid black;
     padding: 20px;
     border-radius: 5px;
+    max-width: 30vw;
+}
+
+.label-login{
+  color:white;
 }
 
 .input-login{
@@ -33,19 +50,31 @@
 }
 
 .button-login{
-    // width: 100%;
     margin-bottom: 1rem;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #ccc;
+    border: 1px solid #e12835;
+    background-color: #e12835;
+    color: white;
     cursor: pointer;
-  justify-self: center ;
+    justify-self: center ;
 }
+
 .login-content-button{
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+  .login-content{
+    height: 100vh;
+  }
+
+  .form-content{
+    max-width: 80vw;
+  }
+
 }

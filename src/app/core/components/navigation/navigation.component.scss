@@ -42,6 +42,8 @@
 a {
   color: white;
   text-decoration: none;
+  padding: .5em;
+  cursor: pointer;
 }
 .in:hover {
   background-color: darkgray;
@@ -99,8 +101,24 @@ a {
   padding: 0 1em;
 }
 
+.navbar-custom{
+  padding: 0;
+}
+
+.container-fluid{
+  padding: 0;
+  background-color: #252525;
+}
+
+#navbarSupportedContent{
+  padding: 0;
+  background-color: #252525;
+}
 
 
+.navbar-toggler{
+  border: 2px solid #e12835;
+};
 
 
 
