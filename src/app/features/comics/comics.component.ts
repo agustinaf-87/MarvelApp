@@ -13,14 +13,33 @@ import { ComicDateDescriptorEnum } from "src/app/core/enums/comic-dateDescriptor
 export class ComicsComponent implements OnInit {
   constructor(private comicService: ComicServiceService) {}
 
-  // comics!: Observable<IPagination<IComic>>; acabo de comentar esto q es original
   comics: IComic[] = [];
   digitalComics: IComic[] = [];
   showLoadMoreButton = true;
+  carouselIndex = 0;
+  responsiveOptions!: any[];
 
   ngOnInit() {
     this.load12LastComics();
     this.loadADigitalComics();
+
+    this.responsiveOptions = [
+      {
+        breakpoint: "1199px",
+        numVisible: 1,
+        numScroll: 1,
+      },
+      {
+        breakpoint: "991px",
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: "767px",
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
   }
 
   load12LastComics(): void {
@@ -35,12 +54,11 @@ export class ComicsComponent implements OnInit {
       });
   }
 
-  loadNext7DigitalComics(): void {
-    const currentOffset = 12 + this.comics.length; // Calcula el offset actual para la próxima página
+  loadNext7Comics(): void {
+    const currentOffset = 12 + this.comics.length;
     this.comicService
       .getFilteredComics({
         dateDescriptor: ComicDateDescriptorEnum.LAST_WEEK,
-        limit: 7,
         offset: currentOffset,
       })
       .subscribe((pagination: IPagination<IComic>) => {
@@ -55,9 +73,7 @@ export class ComicsComponent implements OnInit {
     this.comicService
       .getFilteredComics({
         format: ComicFormatEnum.DIGITAL_COMIC,
-        orderBy: "modified",
-        limit: 20,
-        offset: 5,
+        offset: 50,
       })
       .subscribe((pagination: IPagination<IComic>) => {
         this.digitalComics = pagination.results;
@@ -65,34 +81,3 @@ export class ComicsComponent implements OnInit {
       });
   }
 }
-
-//FUNCIONES ANTERIORES
-// loadFirst12Comics(): void {
-//   this.comicService.get12ComicsByLastWeek().subscribe((comics) => {
-//     this.comics = comics;
-//   });
-// }
-
-//load12DigitalComics(): void {
-// this.comics$ = this.comicService.getFilteredComics({
-//   format: ComicFormatEnum.DIGITAL_COMIC,
-// });
-
-// loadAllDigitalComics(): void {
-//   this.comicService
-//     .getFilteredComics({ format: ComicFormatEnum.DIGITAL_COMIC })
-//     .subscribe((comics) => {
-//       this.comics = comics;
-//     });
-// }
-
-// loadMoreComics(): void {
-//   const nextIndex = this.comics.length;
-//   this.comicService
-//     .get7MoreComicsByLastWeek(nextIndex)
-//     .subscribe((comics) => {
-//       this.comics = [...this.comics, ...comics];
-//       const totalComics = 19;
-//       this.showLoadMoreButton = this.comics.length < totalComics;
-//     });
-// }

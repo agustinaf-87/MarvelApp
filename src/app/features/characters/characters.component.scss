@@ -1,4 +1,42 @@
+@import "src/styles.scss";
+
+.marvel-characters{
+  padding: 1em;
+  font-family: var($generalFont);
+}
+
 .character-container {
   display: flex;
+  padding: 2em 8em ;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-table-menu{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em;
+  font-family: var($generalFont);
+}
+
+  .sort-box{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content:flex-end;
+  padding: 1em;
+  font-family: var($generalFont);
+}
+
+
+.char-card{
+  padding: 0.88em;
+  cursor: pointer;
 }

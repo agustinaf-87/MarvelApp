@@ -1,104 +1,184 @@
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .marvel-footer {
-    background-color: #191919;
-    color: #fff;
-    font-size: 14px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+@import "src/styles.scss";
+
+.marvel-footer-inside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5em;
+}
+
+.marvel-footer {
+  background-color: #191919;
+  color: #fff;
+  font-size: 14px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.marvel-footer-links{
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+
+.links-marvel-items{
+  font-family: var($generalFont);
+  padding: 2em;
+}
+
+.logo-marvel-footer {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.marvel-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marvel-footer ul li {
+  margin-bottom: 10px;
+}
+
+.marvel-footer ul li a {
+  color: #fff;
+}
+
+.marvel-footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.marvel-other-links{
+  padding: 2em;
+}
+
+.marvel-insider, .marvel-unlimited{
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+.marvel-insider-logo {
+  max-width: 3.3em;;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.marvel-unlimited-logo {
+  max-width: 3.3em;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.marvel-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.marvel-item {
+  margin-bottom: 5px;
+  font-family: var($generalFont);
+}
+
+.marvel-description {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  display: inline;
+  color: #767676;
+  font-family: var($generalFont);
+}
+
+.marvel-footer-legal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  padding: 2em;
+}
+.marvel-footer-legal {
+  justify-content: center;
+}
+
+.marvel-footer-legal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marvel-footer-legal ul li {
+  display: inline-block;
+}
+
+.marvel-footer-legal ul li:last-child {
+  margin-right: 0;
+}
+
+.marvel-footer-legal p {
+  margin: 0;
+}
+
+.marvel-follow{
+  padding: 2em;
+}
+
+.follow-title{
+  padding-top: 1em;
+  padding-left: .5em;
+  font-family: var($generalFont);
+
+}
+.footer-social-icons{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+margin-left: 0;
+}
 
 
-  
-  .logo-marvel-footer {
-    width: 80px;
-    margin-bottom: 20px;
-  }
-  
-  .marvel-footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .marvel-footer ul li {
-    margin-bottom: 10px;
-  }
-  
-  .marvel-footer ul li a {
-    color: #fff;
-  }
-  
-  .marvel-footer ul li a:hover {
-    text-decoration: underline;
-  }
-  
-   .marvel-insider-logo{
-    width: 54.36px;
-  }
+.pi {
+  font-size: 2em;
+  color: #fff;
+  padding: .5em ;
 
-  .marvel-unlimited-logo{
-    width: 54.36px; 
-    margin-top: 20px;
-  }
+}
 
-  .marvel-list {
+.footer-social-icons li:hover i {
+  opacity: 0.8;
+}
+
+@media (max-width:870px ){
+  .marvel-footer-inside {
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
-  }
-  
-  .marvel-item {
-    margin-bottom: 5px;
-  }
-  
-  .marvel-description {
-    margin-top: 0px;
-    margin-bottom: 30px;
+    justify-content: center;
+    padding: 0 5em;
   }
 
-  .marvel-footer-legal {
-    color: #fff;
-    font-size: 12px;
-    padding: 10px;
-  }
-  .marvel-footer-legal .p-grid {
+  .marvel-other-links{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #767676;
   }
-  
-  .marvel-footer-legal ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .marvel-footer-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid #767676;
   }
-  
-  .marvel-footer-legal ul li {
-    display: inline-block;
-    margin-right: 10px;
+
+  .marvel-follow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #767676;
   }
-  
-  .marvel-footer-legal ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .marvel-footer-legal p {
-    margin: 0;
-  }
-  
-  .footer-social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .footer-social-icons a i {
-    font-size: 24px;
-    color: #fff;
-  }
-  
-  .footer-social-icons a:hover i {
-    opacity: 0.8;
-  }
+}

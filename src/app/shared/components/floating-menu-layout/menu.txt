@@ -1,1 +1,0 @@
-Para el componente on hover de comics y characters.

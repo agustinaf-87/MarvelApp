@@ -1,0 +1,125 @@
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Color de fondo negro con opacidad */
+  opacity: 0.7; /* Opacidad del fondo negro */
+}
+
+.title-carousel-comic{
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 1em 0;
+
+}
+
+.subtitle-carousel-comic{
+  display: inline;
+  z-index: 1;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1em 0;
+
+}
+
+.carousel-caption{
+  display: flex;
+  flex-direction: column;
+}
+
+a{
+  text-decoration: none;
+}
+
+.button-more-info-c{
+  display: flex;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+  transition: background-color 0.3s ease;
+}
+
+.button-more-info-c:hover{
+  background: linear-gradient(135deg, rgba(203,202,210,1), rgba(255,255,255,1) , rgba(245,247,247,1));
+  color: black;
+  transition: 0.3s ease;
+}
+
+.button-more-info-c:active{
+  background: linear-gradient(135deg, rgba(203,202,210,1), rgba(255,255,255,1) , rgba(245,247,247,1));
+  color: black;
+  transition: 0.3s ease;
+}
+
+.carousel-indicators button {
+  background-color: #fff;
+  border: none;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.carousel-indicators button:focus {
+  outline: none;
+}
+
+.carousel-indicators button.active {
+  background-color: red;
+}
+
+@media (max-width: 764px) {
+
+  .carousel-caption {
+    position: relative;
+    left: 0;
+    transform: none;
+    padding: 1em;
+  }
+
+  .carousel-item {
+    background-color: black;
+  }
+
+  .carousel-item img {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .button-more-info-c{
+    background: #fff;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .button-more-info-c:hover{
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7));
+    color:  #fff;
+    transition: 0.3s ease;
+  }
+
+  .button-more-info-c:active{
+    background: linear-gradient(135deg,rgba(0, 0, 0, 0.7));
+    color: #fff;
+    transition: 0.3s ease;
+  }
+}

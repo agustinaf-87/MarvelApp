@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { ICharacter } from "../../../../core/models/interfaces/characters/character.interface";
 import { CharactersService } from "../../services/character-service/characters.service";
+import { NavigationService } from "src/app/core/services/navigation-service/navigation.service";
 
 @Component({
   templateUrl: "./character-detail.component.html",
@@ -17,7 +18,8 @@ export class CharacterDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private characterService: CharactersService
+    private characterService: CharactersService,
+    public navigation: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +32,9 @@ export class CharacterDetailComponent implements OnInit {
         description: new FormControl(this.characterData.description),
       });
     });
+  }
+
+  goBack(): void {
+    this.navigation.goBack();
   }
 }
