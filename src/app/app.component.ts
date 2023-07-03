@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { environment } from "src/environments/environment.development";
 
 @Component({
   selector: "app-root",
@@ -8,7 +7,4 @@ import { environment } from "src/environments/environment.development";
 })
 export class AppComponent {
   title = "MarvelExam";
-
-  // environmentDev = environment;
-  code = environment.code;
 }
