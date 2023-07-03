@@ -1,4 +1,7 @@
 <div class="main-container">
+  <h1 *ngIf="environmentProd.production === false">
+    You are in development environment
+  </h1>
   <app-spinner></app-spinner>
   <div class="nav-container">
     <app-navigation></app-navigation>
