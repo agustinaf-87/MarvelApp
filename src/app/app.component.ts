@@ -9,5 +9,6 @@ import { environment } from "src/environments/environment.development";
 export class AppComponent {
   title = "MarvelExam";
 
-  environmentDev = environment;
+  // environmentDev = environment;
+  code = environment.code;
 }
