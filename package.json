@@ -13,7 +13,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=127.0.0.1 --o",
-    "build": "ng build",
+    "build:production": "ng build",
+    "build:development": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "env-production": "ng build --configuration production",
     "env-staging": "ng build --configuration staging",
