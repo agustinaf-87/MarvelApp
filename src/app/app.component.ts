@@ -8,5 +8,6 @@ import { environment } from "src/environments/environment";
 })
 export class AppComponent {
   title = "MarvelExam";
-  environment = environment;
+
+  environmentProd = environment;
 }
