@@ -22,13 +22,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = new FormGroup(
       {
-        public_key: new FormControl("3208de67f0498a84f1041a2f2c450415", [
-          Validators.required,
-        ]),
-        private_key: new FormControl(
-          "7e616377057716e202ec371c6a3e9093c2de838a",
-          [Validators.required]
-        ),
+        public_key: new FormControl("", [Validators.required]),
+        private_key: new FormControl("", [Validators.required]),
       },
       {
         updateOn: "submit",
