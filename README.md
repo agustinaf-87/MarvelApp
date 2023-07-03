@@ -1,11 +1,12 @@
 # MARVEL APP
 
 <a name="readme-top"></a>
+<img src="src/assets/images/T21s.gif">
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/agustinaf-87">
+  <a href="https://github.com/agustinaf-87/marvelapp">
 
 <h3 align="center">Marvel App</h3>
 
@@ -15,7 +16,7 @@
     <a href="https://github.com/agustinaf-87/marvelapp"><strong>Explore the project »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://marvelapp-production.vercel.app/">View Demo</a>
   </p>
 </div>
 
@@ -37,7 +38,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">More about the priject</a></li>
+    <li><a href="#roadmap">More about the project</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -45,8 +46,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="src/assets/images/marvel-responsive.JPG">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,7 +114,7 @@ This project was designed to simulate a Marvel App, working with the original AP
 ## More about the exam:
 * To get the project structure please go to: [Documentation](https://agustinaf-87.github.io/gist-repo/)
 * For the issues structure I used github projects.
-* For the deploy I used vercel. 
+* For the deploy I used vercel https://marvelapp-production.vercel.app/. I have used 2 differents domains to work with different environments: production and development. 
 * A not found component: This page was created in order to avoid problems if the user types the wrong url or goes to a nonexistent file.   
 * Pre-commit hook: I used a pre-commit hook to prevent unnecesary commits in the master branch that could cause problems later on. 
 * Animations: there are some animations in the website
